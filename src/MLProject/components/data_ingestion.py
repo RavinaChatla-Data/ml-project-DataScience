@@ -20,7 +20,8 @@ class DataIngestion:
 
     def initiate_data_ingestion(self):
         try:
-            df = read_sql_data()
+            #df = read_sql_data()
+            df = pd.read_csv(os.path.join('notebook/data','raw.csv'))
             print("Reading the data from SQL")   ##loggging.info
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
 
